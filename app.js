@@ -25,7 +25,7 @@ function drive() {
 function changeImage() {
   const image = document.getElementById("car");
 
-  if (image.src.match("./images/beecar.png")) {
+  if (image.src === "./images/beecar.png") {
     image.src = "./images/drive.gif";
   } else {
     image.src = "./images/beecar.png";
