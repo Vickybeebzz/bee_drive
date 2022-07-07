@@ -23,10 +23,12 @@ function drive() {
 }
 
 function changeImage() {
-  if (document.getElementById("car").src.match("./images/beecar.png")) {
-    document.getElementById("car").src = "./images/drive.gif";
+  let image = document.getElementById("car");
+
+  if (image.src.match("./images/beecar.png")) {
+    image.src = "./images/drive.gif";
   } else {
-    document.getElementById("car").src = "./images/beecar.png";
+    image.src = "./images/beecar.png";
   }
 }
 
