@@ -5,18 +5,23 @@ function writeText(){
 }
 
 function drive(){
-  distance = parseInt(localStorage.distance) + Math.floor(Math.random()*100);
-  localStorage.distance=distance;
+  distance = parseInt(localStorage.getItem("distance")) + Math.floor(Math.random()*100);
+  localStorage.setItem("distance",distance);
   writeText();
 }
 
 function reset(){
-  localStorage.distance=0;
-  distance = parseInt(localStorage.distance);
+  localStorage.setItem("distance",0);
+  distance = parseInt(localStorage.getItem("distance"));
   writeText();
 }
 
-distance=parseInt(localStorage.distance);
+if(parseInt(localStorage.getItem("distance") < 0)){
+localStorage.setItem("distance",0);
+};
+
+distance = parseInt(localStorage.getItem("distance"));
+
 writeText();
 document.getElementById("btn-drive").addEventListener("click",drive);
 document.getElementById("btn-reset").addEventListener("click",reset);
