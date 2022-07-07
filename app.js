@@ -1,5 +1,5 @@
 function getDistance() {
-  let distance = localStorage.getItem("distance");
+  const distance = localStorage.getItem("distance");
   if (distance == null) {
     return 0;
   }
@@ -23,7 +23,7 @@ function drive() {
 }
 
 function changeImage() {
-  let image = document.getElementById("car");
+  const image = document.getElementById("car");
 
   if (image.src.match("./images/beecar.png")) {
     image.src = "./images/drive.gif";
