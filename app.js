@@ -1,5 +1,4 @@
 let distance = 0;
-
 function writeText() {
   document.getElementById(
     "textbox"
@@ -11,7 +10,16 @@ function drive() {
     parseInt(localStorage.getItem("distance")) +
     Math.floor(Math.random() * 100);
   localStorage.setItem("distance", distance);
-  writeText();
+  changeImage1();
+  setTimeout(writeText, 2000);
+  setTimeout(changeImage2, 2000);
+}
+
+function changeImage1() {
+  document.getElementById("car").src = "drive.gif";
+}
+function changeImage2() {
+  document.getElementById("car").src = "beecar.png";
 }
 
 function reset() {
