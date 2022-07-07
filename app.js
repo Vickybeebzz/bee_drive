@@ -1,7 +1,8 @@
 function getDistance() {
-  if (localStorage.getItem("distance") == null) {
+  let distance = localStorage.getItem("distance");
+  if (distance == null) {
     return 0;
-  } else return parseInt(localStorage.getItem("distance"));
+  } else return parseInt(distance);
 }
 
 function writeText() {
