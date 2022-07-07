@@ -1,15 +1,20 @@
-let distance = 0;
+function getDistance() {
+  if (localStorage.getItem("distance") == null) {
+    return 0;
+  } else return parseInt(localStorage.getItem("distance"));
+}
+
 function writeText() {
   document.getElementById(
     "textbox"
-  ).innerHTML = `Little Bee Beelioli has driven ${distance} km.`;
+  ).innerHTML = `Little Bee Beelioli has driven ${getDistance()} km.`;
 }
 
 function drive() {
-  distance =
-    parseInt(localStorage.getItem("distance")) +
-    Math.floor(Math.random() * 100);
-  localStorage.setItem("distance", distance);
+  localStorage.setItem(
+    "distance",
+    getDistance() + Math.floor(Math.random() * 100)
+  );
   changeImage();
   setTimeout(writeText, 2000);
   setTimeout(changeImage, 2000);
@@ -25,15 +30,8 @@ function changeImage() {
 
 function reset() {
   localStorage.setItem("distance", 0);
-  distance = parseInt(localStorage.getItem("distance"));
   writeText();
 }
-
-if (localStorage.getItem("distance") == null) {
-  localStorage.setItem("distance", 0);
-}
-
-distance = parseInt(localStorage.getItem("distance"));
 
 writeText();
 document.getElementById("btn-drive").addEventListener("click", drive);
