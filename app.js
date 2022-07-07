@@ -12,7 +12,7 @@ function drive(){
 
 function reset(){
   localStorage.distance=0;
-  distance = 0;
+  distance = parseInt(localStorage.distance);
   writeText();
 }
 
