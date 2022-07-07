@@ -10,16 +10,17 @@ function drive() {
     parseInt(localStorage.getItem("distance")) +
     Math.floor(Math.random() * 100);
   localStorage.setItem("distance", distance);
-  changeImage1();
+  changeImage();
   setTimeout(writeText, 2000);
-  setTimeout(changeImage2, 2000);
+  setTimeout(changeImage, 2000);
 }
 
-function changeImage1() {
-  document.getElementById("car").src = "drive.gif";
-}
-function changeImage2() {
-  document.getElementById("car").src = "beecar.png";
+function changeImage() {
+  if (document.getElementById("car").src.match("./images/beecar.png")) {
+    document.getElementById("car").src = "./images/drive.gif";
+  } else {
+    document.getElementById("car").src = "./images/beecar.png";
+  }
 }
 
 function reset() {
