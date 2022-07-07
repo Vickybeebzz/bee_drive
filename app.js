@@ -5,10 +5,18 @@ function writeText(){
 }
 
 function drive(){
-distance = parseInt(localStorage.distance) + Math.floor(Math.random()*100);
-localStorage.distance=distance;
-writeText();
+  distance = parseInt(localStorage.distance) + Math.floor(Math.random()*100);
+  localStorage.distance=distance;
+  writeText();
 }
 
+function reset(){
+  localStorage.distance=0;
+  distance = 0;
+  writeText();
+}
+
+distance=parseInt(localStorage.distance);
 writeText();
-document.querySelector("button").addEventListener("click",drive);
+document.getElementById("btn-drive").addEventListener("click",drive);
+document.getElementById("btn-reset").addEventListener("click",reset);
