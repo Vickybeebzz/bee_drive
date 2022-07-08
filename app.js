@@ -17,6 +17,11 @@ function BeeDriver() {
       changeImage();
     }, 2000);
   };
+
+  this.reset = function () {
+    localStorage.setItem("distance", 0);
+    writeText();
+  };
 }
 
 function getDistance() {
@@ -56,11 +61,10 @@ function changeImage() {
   }
 }
 
-function reset() {
-  localStorage.setItem("distance", 0);
-  writeText();
-}
-
 writeText();
-document.getElementById("btn-drive").addEventListener("click", driver.drive);
-document.getElementById("btn-reset").addEventListener("click", reset);
+document
+  .getElementById("btn-drive")
+  .addEventListener("click", () => driver.drive());
+document
+  .getElementById("btn-reset")
+  .addEventListener("click", () => driver.reset());
