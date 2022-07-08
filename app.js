@@ -6,7 +6,6 @@ function BeeDriver() {
 
   this.drive = function () {
     this.isDriving = true;
-    console.log(this.isDriving);
     changeImage();
     setTimeout(() => {
       localStorage.setItem(
@@ -14,7 +13,7 @@ function BeeDriver() {
         getDistance() + Math.floor(Math.random() * 100)
       );
       writeText();
-      () => (this.isDriving = false);
+      this.isDriving = false;
       changeImage();
     }, 2000);
   };
