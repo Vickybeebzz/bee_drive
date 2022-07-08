@@ -38,18 +38,6 @@ function writeText() {
   ).innerHTML = `Little Bee Beelioli has driven ${getDistance()} km.`;
 }
 
-//function drive() {
-//  localStorage.setItem(
-//    "distance",
-//    getDistance() + Math.floor(Math.random() * 100)
-//  );
-//  isBeeDriving = true;
-//  changeImage();
-//  setTimeout(writeText, 2000);
-//  setTimeout((isBeeDriving = false), 2000);
-//  setTimeout(changeImage, 2000);
-//}
-
 function changeImage() {
   const image = document.getElementById("car");
   if (driver.isDriving == true) {
